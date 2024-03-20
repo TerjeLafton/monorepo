@@ -1,0 +1,8 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "pkg",
+    srcs = ["internal.go"],
+    importpath = "github.com/terjelafton/monorepo/services/testing/pkg",
+    visibility = ["//visibility:public"],
+)

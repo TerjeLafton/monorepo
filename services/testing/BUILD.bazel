@@ -1,0 +1,19 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "testing_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/terjelafton/monorepo/services/testing",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//libs/real/pkg",
+        "//services/testing/pkg",
+        "@org_golang_x_example_hello//reverse",
+    ],
+)
+
+go_binary(
+    name = "testing",
+    embed = [":testing_lib"],
+    visibility = ["//visibility:public"],
+)

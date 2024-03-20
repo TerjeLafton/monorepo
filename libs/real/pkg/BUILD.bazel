@@ -1,0 +1,8 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "pkg",
+    srcs = ["external.go"],
+    importpath = "github.com/terjelafton/monorepo/libs/real/pkg",
+    visibility = ["//visibility:public"],
+)
